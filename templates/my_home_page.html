@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html id = "ht">
+<head>
+     <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crowdsourcing English-Yoruba Speech Corporal</title>
+<style>
+/*Responsiveness of the screen to different sizes.
+@media only screen and (max-width: 640px){
+  body{
+    background-color: salmon;}
+  }
+
+*@media only screen and (min-width: 641px) and (max-width: 1007px){
+  body{
+    background-color: orange;}
+}
+
+*@media screen and (min-width: 1008px){
+  body{
+    background-color: red;}
+}*/
+
+.c1{
+    width: 400px;
+    height: 400px;
+   }
+
+#marg{
+  display: flex;
+  justify-content: flex-evenly;
+  color: pink;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.sp{
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+   }
+#lin{
+     display: block;
+     padding-right: 50px;
+     padding-left: 50px;
+     text-align: justify;
+     color: burlywood;
+    }
+.sp li{
+       display: inline-block;
+       font-size: 18px;
+       padding: 5px;
+      }
+p{
+      text-align: justify;
+      }
+
+.foot {
+        position: absolute;
+        bottom: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+th{
+   color: green;
+   font-weight: normal;
+   text-align: left;
+   /*font-size: 20px;*/
+   white-space: nowrap;
+   height: 50px;
+   /*width: 50px;*/
+   }
+td{
+   text-align: left;
+  }
+button, table{
+              height: 30px;
+              border-radius: 5px;               
+             }
+table{
+      background-color: lightblue;
+      padding: 4px;
+      margin: 0px auto;
+     }
+.but{
+    text-decoration: none;
+    }
+
+button{
+       background-color: blue;
+      }
+/*#bn{
+    background-image: url("IMG_20240115_184138.jpg");
+    margin-right: 20px;
+    margin-left: 20px;
+}*/
+/*#gen{
+     width: 200px;
+    }*/
+</style>
+</head>
+
+<body bgcolor = "grey" id = "ft">
+<!-- start your code here -->
+
+<h1> <center><marquee loop = "infinity" style="color: orange"> This page has been developed to collect English-Yoruba parallel speech corporal for speech
+     synthesis study </marquee></center></h1> 
+
+<a style="color: red; padding: 15px" href = "#botom">Back To Bottom</a>
+<a id = "top"></a>
+
+<div id = "marg">
+
+<!--beginning of first main div-->
+<div>
+<p id = "p1"><b> You are welcome to this page </b></p>
+<ul class = "sp">
+<li><button><a class = "but" href = "{{ url_for('English_corpus') }}">Enlgish Corpus Page</a></button></li>
+<li><button><a class = "but" href = "{{ url_for('Yoruba_corpus') }}"> Yoruba Corpus Page </a></button></li>
+<li><button><a class = "but" href = "{{ url_for('Transcript_page') }}"> Transcript Page </a></button></li>
+</ul>
+
+<section><p class = "par1"> This web page has developed to collect parallel accented English-Yoruba speech corporal
+    for speech synthesis research work. The aim is to obtain naturally accented corporal of both
+    English and Yoruba, and these corporal is to be made available for public use for research 
+    related to speech synthsis. <br>
+    To participate in this activities, simply register to login in your details. Create a user name 
+    and choose a password. </p>
+</section>
+<section>
+<p>
+     Kindly note:<br>
+    (i) The text or transcripts to be recorded are available in the <a href = "{{ url_for('Transcript_page') }}"> Transcript Page </a><br>
+    (ii) To participate in the recording of the Yoruba speech corpus, click here <a href = "{{ url_for('Yoruba_corpus') }}"> Yoruba Corpus Page </a> or 
+        navigate using the above the link.<br>
+    (iii) To participate in the recording of the English speech corpus, click here <a href = "{{ url_for('English_corpus') }}"> English Corpus Page </a> or 
+        navigate using the above the link.
+</p>
+</section>
+</div>
+<!--end of first main div-->
+
+<!--beginning of second main div-->
+<div id = "bn">
+<ul class = "sp" id = "lin"> 
+  <h1><center>Speech Synthesis</center></h1>
+<li>This is the generation, creation or syhthesis of speech in another language.</li>
+<li>In this project, English and Yoruba are the source and target languages respectively. </li>
+<li>The main focus of this work is to develop English-Yoruba parallel corporal for speech synthsis of this project.</li>
+<li>To assist in the future reasearch work in speech processing, recognition, and synthesis, the coproral to be generated 
+  in this project would be publicly made available for reserach purposes.</li>
+</ul>
+</div>
+<!--End of second main div-->
+
+
+<!--beginning of third main div-->
+<div id = "p3">
+<form id = "searchform" autocomplete = "on" action="{{ url_for('read_form')}}" method="post">
+<p><i style="color: red">Kindly register your details</i></p>
+<table id = "tb" border = "1" cellpadding = "5" cellspacing = "0">
+
+<tr>
+<th><label for "uname">Username: </label></th>
+<td><input autocomplete = "on" type = "text" id = "uname" name = "username" size = "23" placeholder = "input a username" required/></td>
+</tr>
+
+<tr>
+<th><label for "fname">Firstname:</label></th>
+<td><input autocomplete = "on" type = "text" id = "fname" name = "firstname" size = "23" placeholder = "your firstname"/></td>
+</tr>
+
+<tr>
+<th><label for "lname">Lastname: </label></th>
+<td><input autocomplete = "on" type = "text" id = "lname" name = "lastname" size = "23" placeholder = "your lastname" required/></td>
+</tr>
+
+
+<tr>
+<th><label for "gend">Gender: </label></th>
+<td><input autocomplete = "on" type = "text" id = "gend" name = "gendername" size = "23" placeholder = "your gender" required/></td>
+</tr>
+
+</tr>
+
+<tr>
+<th><label for "email">Email Address: </label></th>
+<td><input autocomplete = "on" type = "email" id = "email" name = "emailAdd" size = "23" placeholder = "input your email" required/></td>
+</tr>
+
+<tr>
+<th><label for "instname">Name of Institution: </label></th>
+<td><input autocomplete = "on" type = "text" id = "instname" name = "institution" size = "23" placeholder = "your institution name" required/></td>
+</tr>
+
+<tr>
+<th><label for "teln">Mobile Number: </label></th>
+<td><input autocomplete = "on" type = "tel" id = "teln" name = "mobilenumber" size = "23" placeholder = "input your mobile number" required/></td>
+</tr>
+
+
+<tr>
+<th><label for "pword">Password: </label></th>
+<td><input autocomplete = "on" type = "password" id = "pword" name = "userpassword" size = "23" placeholder = "input your password" required/></td>
+</tr>
+
+</table><br>
+
+<tr>
+<td><label for = "submit">
+<input id="sub" type="submit" value="REGISTER"/>
+</label></td>
+</tr>
+
+<tr>
+<td><label for = "reset">
+<input id="sub" type="reset" value="RESET"/>
+</label></td>
+</tr>
+
+</form>
+</div>
+
+<!--end of third main div-->
+
+<!--<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp this paragraph</p>-->
+
+</div>
+
+<a id = "botom"></a>
+<a href="#top">Back to top</a>
+
+
+<footer>
+<div class="foot">&copy Copyright 2024 Speech Synthesis. All right reserved.</div></br></br>
+</footer>
+<!-- end your code here -->
+<!-- link to the recorder source live demo: https://addpipe.com/simple-recorderjs-demo/ -->
+</body>
+
+</html>
