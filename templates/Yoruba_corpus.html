@@ -192,8 +192,8 @@ th{
   	<p><strong>Recordings:</strong></p>
   	<ol id="recordingsList"></ol>
     <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
-    <script src = "{{ url_for('recorder')}}"></script>
-    <script src = "{{ url_for('apps')}}"></script>
+    <script src = "{{ url_for('static', filename='js/recorder.js')}}"></script>
+    <script src = "{{ url_for('static', filename='js/apps.js')}}"></script>
    </div>
    <!-- The end of first main div-->
    
