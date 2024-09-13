@@ -18,7 +18,7 @@ def index():
     
 
 # `read-form` endpoint 
-@app.route('/read-form', methods=['POST']) 
+@app.route('/read_form', methods=['POST']) 
 def read_form(): 
 
 	# Get the form data as Python ImmutableDict datatype 
@@ -44,7 +44,7 @@ def English_corpus():
 
 
 # `read-form` endpoint 
-@app.route('/read-form', methods=['POST']) 
+@app.route('/read_form3', methods=['POST']) 
 def read_form3(): 
 
 	# Get the form data as Python ImmutableDict datatype 
@@ -52,10 +52,10 @@ def read_form3():
 
 	## Return the extracted information 
 	return {
-        'fileName': data2['filename'],
-        'dataType': data2['datatype'],
-        'accType': data2['accounttype'],
-        'duration': data2['durations'],
+        'fileName': data3['filename'],
+        'dataType': data3['datatype'],
+        'accType': data3['accounttype'],
+        'duration': data3['durations'],
 	} 
 
 # Root endpoint 
@@ -65,7 +65,7 @@ def Yoruba_corpus():
 	return render_template('Yoruba_corpus.html') 
 
 # `read-form` endpoint 
-@app.route('/read-form', methods=['POST']) 
+@app.route('/read_form2', methods=['POST']) 
 def read_form2(): 
 
 	# Get the form data as Python ImmutableDict datatype 
