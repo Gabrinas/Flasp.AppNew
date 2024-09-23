@@ -148,12 +148,23 @@ th{
   padding-left: 45px;
 }
 
+.lk{
+  text-decoration: none;
+}
+
+.nw{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 #part{
   display:block;
   justify-content: space-between;
   margin: 10px;
 }
-
+.cg{
+  text-align: justify;
+}
 .but{
   text-decoration: none;
 }
@@ -177,7 +188,7 @@ th{
         which are replica of the Yoruba corpus collected in <a class = "but" href = "{{ url_for('Yoruba_corpus') }}"> Yoruba Corpus Page </a></p>
         
    
-    <p><b>To fully utilise this recording and get the expected recording, kindly take note of the following instructions:</b><br><br>
+    <p class = "cg"><b>To fully utilise this recording and get the expected recording, kindly take note of the following instructions:</b><br><br>
        1. Select one sentence at a time from the transcript page. <br>
        2. Ensure your accent is properly taking care of in the recording. <br>
        3. Ensure you are cautious of the pace at which you pronounce each word in the sentence. <br>
@@ -191,11 +202,28 @@ th{
           For the clinical domain data, words using the most known pronunciations by people. e.g. <br>
           CT should be pronounced as "see tee" and not as "Computed Tomography", <br>
           "CXR" should be pronounced "Chest Xray" and not "see ex arr" <br>
-       8. Save the file with index no (in the transcript)_EC.wav starting with index 000001 e.g. <br>
-          000001_EC.wav <br>
-       9. Upload your recordings to google drive using the link https://www.... while simultaneously submit <br>
-          the details of your recordings using the form on the left hand side of the screen. <br>
-       10.Record a maximum of 2.5 hours and take a break every 30 minutes of recordings.<br></p>
+       <p style="color: brown; font-weight: bold;">
+       8. For saving of audio file, if a file is saved with "TEDTALK_PARTA_3_55", after recording, to save such file, use the <br>
+           tag name + "_ENG"<br> <!---if it is an English audio file OR tag name + "_YOR" if it is a Yoruba audio file.<br>-->
+       9. For the instance, for the tag above, the text file is picked inside the folder <br>"TED_TALK_MALARIA_ENGLISH_TRANSCRIPT_PARTA_3"
+         so, it is an English text file, it is saved with <br>"TEDTALK_PARTA_3_55_ENG. <!---- and the Yoruba Equivalent is saved with 
+         "TEDTALK_PARTA_3_55_YOR"-->. <br>
+       <!--10. If it is a Yoruba text file that is picked first, say for instance, you pick 'YORLEIPZIPPARTA_2_18' <br>from the folder name
+           "LEIPZIP_YORUBA_TRANSCRIPT_PARTA_2", you also follow similar approach, by saving <br> the Yoruba and corresponding English audio
+            files with 'YORLEIPZIPPARTA_2_18_YOR" and <br>'YORLEIPZIPPARTA_2_18_ENG' respectively.<br>-->
+       10. Ensure you select the exact main folder i.e. public health or general domain folder, and <br>
+           that you store the English audio recorded in the allocated folder particular,<br>
+           paying attention to TED_TALK_MALARIA_ENGLISH_TRANSCRIPT, _PARTA, and _2 for the case of <br>
+           TED_TALK_MALARIA_ENGLISH_TRANSCRIPT_PARTA_2 as the name of a sub-folder.<br>
+       <!--11. Ensure you select the exact main folder i.e. public health or general domain folder, and <br>
+           that you store the English audio recorded in the allocated folder particular,<br>
+           paying attention to LEIPZIP_YORUBA_TRANSCRIPT, _PARTA, and _2 for the case of <br>
+           "LEIPZIP_YORUBA_TRANSCRIPT_PARTA_2" as the name of a sub-folder.<br>-->
+       </p>
+       11. Upload your recordings using the link <a class= "lk" href="https://docs.google.com/document/d/1l9d4gbEdt4EElNE_dIrEvHrcXxbPsHBQ1tfcKjyACmo/edit?usp=drive_link"><b>Upload Audio Files</b></a> while simultaneously submit <br>
+           the details of your recordings using the form on the <strong>top-right</strong> of this page or<br> the Google form provided on the 
+           <strong>bottom-right</strong> of this page. <br>
+       12. Record a maximum of 2.5 hours and take a break every 30 minutes of recordings.<br></p>
     
     <p> Also submit the following details per audio recording: <br>
        1. File name you save the recording with. <br>
@@ -253,8 +281,18 @@ th{
      </form>
    </div>
    
-    <hr style="color:green">
+   <hr style="color:green; height: auto;">
    <div><textarea rows = "20" cols = "60">copy and paste your transcripts here for recording purpose</textarea></div>
+   <div style = "margin-top: 10px;">
+    <h><b>Uploading of Recorded Audio Files</b></h>
+    <p>Kindly follow the link below to upload your files.</p>
+    <button><a class= "lk" href="https://docs.google.com/document/d/1l9d4gbEdt4EElNE_dIrEvHrcXxbPsHBQ1tfcKjyACmo/edit?usp=drive_link"><b>Upload Audio Files</b></a></button>
+    
+    <div class="nw"><h><strong>Submit Recording Details</strong></h>
+    <center><iframe style = "margin-top: 10px" src="https://docs.google.com/forms/d/e/1FAIpQLSdKcN5TBdIBXcAvYUM4uCiYU_tzqPUNBq_pJnxmTZDCCQayVg/viewform?embedded=true" width="450" height="300" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></center>
+    </div> 
+  </div>
+
    </div>
 <!-- The end of second main div-->
  
