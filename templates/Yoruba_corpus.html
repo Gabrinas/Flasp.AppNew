@@ -8,21 +8,22 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     
     <style>
-/*Responsiveness of the screen to different sizes.*/
+/*Responsiveness of the screen to different sizes. */
 @media only screen and (max-width: 640px){
   body{
-    background-color: salmon;}
+    background-color: white;}
   }
 
-@media only screen and (min-width: 641px) and (max-width: 1007px){
+*@media only screen and (min-width: 641px) and (max-width: 1007px){
   body{
-    background-color: orange;}
+    background-color: white;}
 }
 
-@media screen and (min-width: 1008px){
+*@media screen and (min-width: 1008px){
   body{
-    background-color: red;}
+    background-color: white;}
 }
+
 a{
   color: #337ab7;
 }
@@ -44,7 +45,7 @@ body {
 	overflow-wrap: break-word;
 	color:black;
 	margin:2em;
-  background: lightseagreen;
+  background: white;
 }
 
 h1 {
@@ -64,7 +65,7 @@ h2 {
 }
 
 red {
-	color: red;
+	color: black;
 }
 
 #controls {
@@ -79,7 +80,7 @@ button {
   min-width: 10rem;
   border: none;
   border-radius: 0.15rem;
-  background: green;
+  background: yellowgreen;
   margin-left: 2px;
   box-shadow: inset 0 -0.15rem 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -93,7 +94,7 @@ button {
 
 button:hover, button:focus {
   outline: none;
-  background: lightgreen;
+  background: blue;
 }
 
 button::-moz-focus-inner {
@@ -157,61 +158,69 @@ th{
 .but{
   text-decoration: none;
 }
+
 .lk{
-  text-decoration: none;  
+  text-decoration: none;
+  
 }
+
 .nw{
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.cg{
+.main6{
+  width: 700px;
   text-align: justify;
 }
+#main9{
+  display: flex;
+}
+
     </style>    
 
   </head>
   <body>
-
-    <button><a class = "but" href = "{{ url_for('index') }}">Back to Home Page</a></button>
-    
+    <div id = "main9">
+    <div><a style="color: #222; padding: 15px" href = "#botom">Back to bottom</a>
+    <a id = "top"></a></div>
+    <div><button class="cln" style="background-color: black;"><a class = "but" href = "{{ url_for('index') }}"><p style="color: white">Back to Home Page</p></a></button></div>
+    </div>
   <div id = "cl">
 
     <!-- The beginning of first main div-->
-    <div>
+    <div class="main6">
     <h1>You are welcome to the Yoruba Audio Recording Page</h1>
     <p> This recorder records wav/PCM audio (48 kHz sampling rate) directly in the browser.
         It uses Matt Diamond‘s <a target="_blank" href="https://github.com/mattdiamond/Recorderjs">Recorder.js</a> 
-        recorder, <br> which is a popular JavaScript library for recording audio in the browser as uncompressed pcm audio in .wav containers. </p>
-    <p> The purpose of this page is to collect accented Yoruba corpus for the transcripts (available in the <a class = "but" href = "{{ url_for('Transcript_page') }}"> Transcript Page </a>) <br>
+        recorder, which is a popular JavaScript library for recording audio in the browser as uncompressed pcm audio in .wav containers. </p>
+    <p> The purpose of this page is to collect accented Yoruba corpus for the transcripts (available in the <a class = "but" href = "{{ url_for('Transcript_page') }}"> Transcript Page </a>)
         which are replica of the English corpus collected in <a class = "but" href = "{{ url_for('English_corpus') }}"> English Corpus Page </a>
     </p>
     
-    <p class = "cg"><b>To fully utilise this recording and get the expected recording, kindly take note of the following instructions:</b><br><br>
-       1. Select one sentence at a time from the transcript page. <br>
+    <p><b>To fully utilise and get the expected quality recording, kindly take note of the following instructions:</b><br><br>
+       1. Select the range of sentences allocated to you from the transcript page. <br>
        2. Ensure your accent is properly taking care of in the recording. <br>
        3. Ensure you are cautious of the pace at which you pronounce each word in the sentence. <br>
           Do not be too fast and do not be too slow.<br>
-       4. Ensure your recorded words match that provided in the transcript index chosen. If you mistakenly <br>
+       4. Ensure your recorded words match that provided in the transcript index chosen. If you mistakenly 
           deviate, kindly reload the page to start over. <br>
-       <p style="color: brown; font-weight: bold;">
-       5. For saving of audio file, if a file is saved with 'YORLEIPZIPPARTA_2_18' after recording, to save such file, use the <br>
-          tag name + "_YOR".<br>
-       6. For the instance, for the tag above, the text file is picked inside the folder <br>"LEIPZIP_YORUBA_TRANSCRIPT_PARTA_2"
-          so, it is an Yoruba text file, it is saved with <br>'YORLEIPZIPPARTA_2_18_YOR. <br>
-       <!--7. If it is a Yoruba text file that is picked first, say for instance, you pick 'YORLEIPZIPPARTA_2_18' <br>from the folder name
-          "LEIPZIP_YORUBA_TRANSCRIPT_PARTA_2", you also follow similar approach, by saving <br> the Yoruba and corresponding English audio
-           files with 'YORLEIPZIPPARTA_2_18_YOR" and <br>'YORLEIPZIPPARTA_2_18_ENG' respectively.<br>-->
-       7. Ensure you select the exact main folder i.e. medical or general domain folder, and <br>
-          that you store the audio English and Yoruba recorded in the allocated folder particular,<br>
-          paying attention to LEIPZIP_YORUBA_TRANSCRIPT, _PARTA, and _2 for the case of <br>
-          "LEIPZIP_YORUBA_TRANSCRIPT_PARTA_2" as the name of a sub-folder.<br>
+       <p style="color: black; font-weight: bold;">
+       5. For saving of audio file, if a text file has tag "YORLEIPZIPPARTA_2_", after recording, to save such file, use the 
+        tag name_index no"_YOR"<br> <!---if it is an English audio file OR tag name + "_YOR" if it is a Yoruba audio file.<br>-->
+       6. For the instance, if a text file is picked inside a file document "LEIPZIP_YORUBA_TRANSCRIPT_PARTA_2" whose tag is "YORLEIPZIPPARTA_2_",
+      and at index no 18, it is a Yoruba text file, and the Yoruba audio is saved with "YORLEIPZIPPARTA_2_18_YOR.<br> <!---- and the Yoruba Equivalent is saved with -->
+       7. Ensure you select the exact main folder i.e. public health or general domain folder, and
+        that you store the Yoruba audio recorded in the allocated folder particular,
+        paying attention to LEIPZIP_YORUBA_TRANSCRIPT, _PARTA, and _2 for the case of 
+        "LEIPZIP_YORUBA_TRANSCRIPT_PARTA_2" as the name of a file document.<br>
        </p>
-       8. Upload your recordings using the link <a class= "lk" href="https://docs.google.com/document/d/1l9d4gbEdt4EElNE_dIrEvHrcXxbPsHBQ1tfcKjyACmo/edit?usp=drive_link"><b>Upload Audio Files</b></a> while simultaneously submit <br>
-           the details of your recordings using the form on the <strong>top-right</strong> of this page or<br> the Google form provided on the 
+       8. Upload your recordings using this link <a class= "lk" href="https://docs.google.com/document/d/1l9d4gbEdt4EElNE_dIrEvHrcXxbPsHBQ1tfcKjyACmo/edit?usp=drive_link"><b>Upload Audio Files</b></a> while simultaneously submit 
+           the details of your recordings using the Google form provided on the 
            <strong>bottom-right</strong> of this page. <br>
-       9.Record a maximum of 2.5 hours and take a break every 30 minutes of recordings.<br></p>
-        
-    <p> Also submit the following details per audio recording: <br>
+       9.Record a maximum of 2.5 hours and take a break every 30 minutes of recordings.<br>
+       10. You can make use of the text areas on the right to store texts. <br></p>
+    
+    <p> Submit the following details per audio recording using the bottom-right form: <br>
        1. File name you save the recording with. <br>
        2. The type of data you just recorded (either general or public health) <br>
        3. Duration (in seconds) of each of your recordings <br>
@@ -235,54 +244,59 @@ th{
    
    <!--The beginning of second main div-->
    <div id = "part">
-    
-   <div id = "p3">
-      <form id = "searchform" autocomplete = "on" action="{{ url_for('read_form2')}}" method="post">
-         <p><i>Kindly register the details of your recording</i></p>
-         <table id = "tb" border = "1" cellpadding = "5" cellspacing = "0">
-
-         <tr>
-            <th><label for "fname">File_name: </label></th>
-            <td><input autocomplete = "on" type = "text" id = "fname" name = "filename" size = "23" placeholder = "e.g. 000001_YC.wav" required/></td>
-         </tr>
+    <div id = "p3">
+     <h><strong>Texts areas to store texts</strong></h>
+     <!--
+       <form id = "searchform" autocomplete = "on" action="{{ url_for('read_form3')}}" method="post">
+          <p><i>Kindly register the details of your recording</i></p>
+          <table id = "tb" border = "1" cellpadding = "5" cellspacing = "0">
+ 
+          <tr>
+             <th><label for "fname">File_name: </label></th>
+             <td><input autocomplete = "on" type = "text" id = "fname" name = "filename" size = "23" placeholder = "e.g. 000001_EC.wav" required/></td>
+          </tr>
+          
+          <tr>
+             <th><label for "fdomain">Data Type: </label></th>
+             <td><input autocomplete = "on" type = "text" id = "fdomain" name = "datatype" size = "23" placeholder = "General or Clinical/Public health" required/></td>
+          </tr>
+ 
+          <tr>
+             <th><label for "acc_type">Accent Type:</label></th>
+             <td><input autocomplete = "on" type = "text" id = "acc_type" name = "accounttype" size = "23" placeholder = "e.g. Nigerian English"/></td>
+             </tr>
+ 
+          <tr>
+             <th><label for "dur">Duration (seconds): </label></th>
+             <td><input autocomplete = "on" type = "tel" id = "dur" name = "durations" size = "23" placeholder = "e.g. Audio duration in secs" required/></td>
+             </tr>
+         </table><br>
          
-         <tr>
-            <th><label for "fdomain">Data Type: </label></th>
-            <td><input autocomplete = "on" type = "text" id = "fdomain" name = "datatype" size = "23" placeholder = "General or Clinical/Public health" required/></td>
-         </tr>
-
-         <tr>
-            <th><label for "acc_type">Accent Type:</label></th>
-            <td><input autocomplete = "on" type = "text" id = "acc_type" name = "accounttype" size = "23" placeholder = "e.g. Egba"/></td>
-            </tr>
-
-         <tr>
-            <th><label for "dur">Duration (seconds): </label></th>
-            <td><input autocomplete = "on" type = "tel" id = "dur" name = "durations" size = "23" placeholder = "e.g. Audio duration in secs" required/></td>
-            </tr>
-        </table><br>
-        
-        <button> Submit audio details </button>        
-     </form>
-   </div>
-   
-   <hr style="color:green; height: auto;">
-   <div><textarea rows = "20" cols = "60">copy and paste your transcripts here for recording purpose</textarea></div>
-   <div style = "margin-top: 10px;">
-    <h><b>Uploading of Recorded Audio Files</b></h>
-    <p>Kindly follow the link below to upload your files.</p>
-    <button><a class= "lk" href="https://docs.google.com/document/d/1l9d4gbEdt4EElNE_dIrEvHrcXxbPsHBQ1tfcKjyACmo/edit?usp=drive_link"><b>Upload Audio Files</b></a></button>
+         <button> Submit audio details </button>        
+      </form>-->
+      <div><textarea rows = "20" cols = "60">copy and paste your transcripts here for recording purpose</textarea></div>
+    </div>
     
-    <div class="nw"><h><strong>Submit Recording Details</strong></h>
-    <center><iframe style = "margin-top: 10px" src="https://docs.google.com/forms/d/e/1FAIpQLSdKcN5TBdIBXcAvYUM4uCiYU_tzqPUNBq_pJnxmTZDCCQayVg/viewform?embedded=true" width="450" height="300" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></center>
-    </div> 
-  </div>
-
+     <hr style="color:green; height: auto;">
+    <div><textarea rows = "20" cols = "60">copy and paste your transcripts here for recording purpose</textarea></div>
+    <div style = "margin-top: 10px;">
+     <h><b>Uploading of Recorded Audio Files</b></h>
+     <p>Kindly follow the link below to upload your files.</p>
+     <button style="background-color: black;"><a class= "but" href="https://docs.google.com/document/d/1l9d4gbEdt4EElNE_dIrEvHrcXxbPsHBQ1tfcKjyACmo/edit?usp=drive_link"><b style="color: white">Upload Audio Files</b></a></button>
+     
+     <div class="nw"><h><strong>Submit Recording Details</strong></h>
+     <center><iframe src="https://docs.google.com/forms/d/e/1FAIpQLScxba-q8gZ2xvWv4UYcMxXNlGWihunkSeZcTO3J6x9jD3Pukg/viewform?embedded=true" width="450" height="300" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></center>
+     </div> 
    </div>
-<!-- The end of second main div-->
-
+ 
+    </div>
+ <!-- The end of second main div-->
+  
   </div>
   
+  <a id = "botom"></a>
+  <a href="#top">Back to top</a>
+
   <footer>
          <div class="foot">&copy Copyright 2024 Speech Synthesis. All right reserved.</div></br></br>
   </footer>
